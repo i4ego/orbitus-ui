@@ -1,0 +1,54 @@
+### python3 -m pip install -r req.txt
+# hosting
+import fastapi
+from fastapi import FastAPI, responses, requests
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+import uvicorn
+# webview
+import webview
+# built-in
+import os
+import pathlib
+import threading
+
+DEFAULTS = {
+    "host" : "localhost",
+    "port" : 4549
+}
+WORKING_DIRECTORY = pathlib.Path(__file__).parent
+FRONT_DIRECTORY = pathlib.Path(__file__).parent/"frontend"
+ORBITUS_DIRECTORY = pathlib.Path(__file__).parent.parent
+VERSION = (ORBITUS_DIRECTORY/".service"/"ui-version.txt").read_text()
+ORBITUS_VERSION = (ORBITUS_DIRECTORY/".service"/"orbitus_version.txt").read_text()
+
+app = FastAPI(title="orbitus ui")
+app.mount("/css", StaticFiles(directory=FRONT_DIRECTORY/"css"), name="css")
+app.mount("/js", StaticFiles(directory=FRONT_DIRECTORY/"js"), name="js")
+templates = Jinja2Templates(directory=FRONT_DIRECTORY/"html")
+
+@app.get("/", response_class=responses.HTMLResponse)
+async def index(request: requests.Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={
+            "version": VERSION,
+            "orbitusversion" : ORBITUS_VERSION
+        },
+    )
+
+def host_worker():
+    uvicorn.run(app, host=DEFAULTS["host"], port=DEFAULTS["port"])
+
+def main() -> int:
+    hw = threading.Thread(target=host_worker, daemon=True, name="orbitus server")
+    hw.start()
+
+    webview.create_window(app.title, url=f"http://{DEFAULTS['host']}:{DEFAULTS['port']}/", width=1200, height=800, min_size=(1200, 800))
+    webview.start()
+    hw.kill()
+    return 0
+
+if __name__ == "__main__":
+    exit(main())

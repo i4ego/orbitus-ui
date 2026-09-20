@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght,YTLC@6..12,75..125,200..1000,511&display=swap');
+
+html, body {
+    overflow: hidden;
+    max-height: 100vh;
+    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    position: fixed;
+    display: flex;
+
+    inset: 0;
+
+    background-color: #131313;
+}
+
+button {
+    cursor: pointer;
+}
+
+.side-panel {
+    display: flex;
+    background-color: #31313150;
+    width: 20vw;
+    height: 100%;
+
+    border-right: 2px solid #31313175;
+
+    flex-direction: column;
+
+    align-items: center;
+    padding: 12px;
+
+    color: #ffffffe9;
+
+    min-width: 220px;
+}
+
+.side-panel .title {
+    font-size: xx-large;
+    font-weight: 800;
+    font-stretch: expanded;
+}
+
+.side-panel .subtitle {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.side-panel .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-top: 24px;
+    width: 90%;
+    height: 100%;
+}
+
+.side-panel .buttons button {
+    width: 100%;
+    height: max-content;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: 120%;
+
+    appearance: none;
+    border: 0;
+    border-radius: 12px;
+    background-color: #333; 
+    color: #cccccc;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.side-panel .buttons button:hover {
+    background-color: #444; 
+}
+
+.side-panel .buttons button:active {
+    background-color: #555; 
+}
+.side-panel .buttons .active {
+    background-color: #444; 
+}
+
+.side-panel .buttons .exit {
+    margin-top: auto;
+}
