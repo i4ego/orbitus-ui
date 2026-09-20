@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orbitus-UI</title>
     <link rel="stylesheet" href="{{ url_for('css', path='/styles.css') }}">
+    <script src="{{ url_for('js', path='/jquery.min.js') }}"></script>
+    <script src="{{ url_for('js', path='/script.js') }}"></script>
 </head>
 <body>
     <div class="side-panel">
         <a class="title" onclick="window.location.href = '/'">Orbitus UI</a>
         <a class="subtitle">orbitus-service {{ orbitusversion }}</a>
         <div class="buttons">
-            <button class="active">Запуск и настройка</button>
-            <button>Настройки</button>
-            <button>О orbitus-ui</button>
+            <button class="active" onclick="openPage(1)">Запуск и настройка</button>
+            <button onclick="openPage(2)">Настройки</button>
+            <button onclick="openPage(3)">О orbitus-ui</button>
             <button class="exit">Выход</button>
         </div>
+    </div>
+    <div class="pages">
+        <div class="page">page1</div>
+        <div class="page">page2</div>
+        <div class="page">page3</div>
     </div>
 </body>
 </html>
