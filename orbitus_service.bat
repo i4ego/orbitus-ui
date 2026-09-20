@@ -50,7 +50,7 @@ REM Сбор персональных данных
 cls
 
 REM Проверка обновлений
-set /p LOCAL_VERSION=<"%~dp0bin\orbitus_version.txt"
+set /p LOCAL_VERSION=<"%~dp0bin\ui_version.txt"
 set "UpdateStatus="
 
 REM Запуск функций иницилизации
@@ -336,7 +336,7 @@ if not exist "%~dp0bin\check_updates.enabled" (
 cls
 echo [?] Инфо: Идет получение информации о последних обновлениях...
 
-set "GLOBAL_VERSION_URL=https://raw.githubusercontent.com/FunsyMe/orbitus-service/main/.service/orbitus_version.txt"
+set "GLOBAL_VERSION_URL=https://raw.githubusercontent.com/i4ego/orbitus-ui/main/.service/ui-version.txt"
 for /f "delims=" %%A in ('call "pwsh.exe" -NoProfile -Command "(Invoke-WebRequest -Uri \"%GLOBAL_VERSION_URL%\" -Headers @{\"Cache-Control\"=\"no-cache\"} -UseBasicParsing -TimeoutSec 5).Content.Trim()" 2^>nul') do set "GLOBAL_VERSION=%%A"
 
 if "%GLOBAL_VERSION%"=="" (
