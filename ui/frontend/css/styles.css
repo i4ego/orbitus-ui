@@ -119,3 +119,65 @@ button {
 
     color: #fff;
 }
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+    gap: 12px;
+    transition: gap 0.3s;
+}
+
+.dashboard .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #31313133;
+    border: 1.5px solid #31313175;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: 96px;
+    justify-content: center;
+    transition: all 0.3s;
+    min-width: 0;
+}
+
+.dashboard .card:hover {
+    flex: 2;
+    font-stretch: 150%;
+    .card-content small {
+        font-size: calc(small - 8px);
+    }
+}
+
+.dashboard:hover {
+    gap: 6px;
+    .card {
+        .card-content {
+            font-stretch: 117%;
+        }
+    }
+}
+
+.dashboard .card .card-title {
+    font-stretch: 100%;
+    font-weight: 500;
+    font-size: small;
+}
+
+.dashboard .card .card-content {
+    font-stretch: 150%;
+    font-weight: 700;
+    font-size: large;
+    margin-left: 6px;
+    transition: all 0.3s;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dashboard .card .card-content small {
+    font-size: calc(small + 4px);
+}

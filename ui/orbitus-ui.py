@@ -27,14 +27,23 @@ app.mount("/css", StaticFiles(directory=FRONT_DIRECTORY/"css"), name="css")
 app.mount("/js", StaticFiles(directory=FRONT_DIRECTORY/"js"), name="js")
 templates = Jinja2Templates(directory=FRONT_DIRECTORY/"html")
 
+status = "Запущен"
+gf = "Отключен"
+ipsetf = "Отключен"
+config = "general (FAKE TLS AUTO ALT3)"
+
 @app.get("/", response_class=responses.HTMLResponse)
 async def index(request: requests.Request):
     return templates.TemplateResponse(
         request=request,
         name="index.html",
         context={
-            "version": VERSION,
-            "orbitusversion" : ORBITUS_VERSION
+            "version" : VERSION,
+            "orbitusversion" : ORBITUS_VERSION,
+            "status" : status,
+            "gf" : gf,
+            "ipsetf" : ipsetf,
+            "config" : config
         },
     )
 

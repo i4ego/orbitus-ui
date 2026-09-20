@@ -20,7 +20,30 @@
         </div>
     </div>
     <div class="pages">
-        <div class="page">page1</div>
+        <div class="page">
+            <div class="dashboard">
+                <div class="card">
+                    <a class="card-title">Статус</a>
+                    <a class="card-content">{{ status }}</a>
+                </div>
+                <div class="card">
+                    <a class="card-title">GameFilter</a>
+                    <a class="card-content">{{ gf }}</a>
+                </div>
+                <div class="card">
+                    <a class="card-title">IPset Filter</a>
+                    <a class="card-content">{{ ipsetf }}</a>
+                </div>
+                <div class="card">
+                    <a class="card-title">Конфигурация</a>
+                    <a class="card-content"><small>{{ config }}</small></a>
+                </div>
+                <div class="card">
+                    <a class="card-title">Версия orbitus-ui</a>
+                    <a class="card-content">{{ version }}</a>
+                </div>
+            </div>
+        </div>
         <div class="page">page2</div>
         <div class="page">page3</div>
     </div>
