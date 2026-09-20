@@ -13,7 +13,7 @@
         <a class="title" onclick="window.location.href = '/'">Orbitus UI</a>
         <a class="subtitle">orbitus-service {{ orbitusversion }}</a>
         <div class="buttons">
-            <button class="active" onclick="openPage(1)" id="p1">Запуск и настройка</button>
+            <button class="active" onclick="openPage(1)" id="p1">Дэшборд</button>
             <button onclick="openPage(2)" button-data="2" id="p2">Настройки</button>
             <button onclick="openPage(3)" button-data="3" id="p3">О orbitus-ui</button>
             <button class="exit">Выход</button>
@@ -23,23 +23,23 @@
         <div class="page">
             <div class="dashboard">
                 <div class="card">
-                    <a class="card-title">Статус</a>
-                    <a class="card-content">{{ status }}</a>
+                    <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
+                    <a class="card-content" id="status">{{ status }}</a>
                 </div>
                 <div class="card">
-                    <a class="card-title">GameFilter</a>
+                    <a class="card-title"><img src="{{ url_for('images', path='/game.svg') }}"> GameFilter</a>
                     <a class="card-content">{{ gf }}</a>
                 </div>
                 <div class="card">
-                    <a class="card-title">IPset Filter</a>
+                    <a class="card-title"><img src="{{ url_for('images', path='/ip.svg') }}"> IPset Filter</a>
                     <a class="card-content">{{ ipsetf }}</a>
                 </div>
                 <div class="card">
-                    <a class="card-title">Конфигурация</a>
+                    <a class="card-title"><img src="{{ url_for('images', path='/config.svg') }}"> Конфигурация</a>
                     <a class="card-content"><small>{{ config }}</small></a>
                 </div>
                 <div class="card">
-                    <a class="card-title">Версия orbitus-ui</a>
+                    <a class="card-title"><img src="{{ url_for('images', path='/version.svg') }}"> Версия orbitus-ui</a>
                     <a class="card-content">{{ version }}</a>
                 </div>
             </div>

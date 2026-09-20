@@ -25,6 +25,7 @@ ORBITUS_VERSION = (ORBITUS_DIRECTORY/".service"/"orbitus_version.txt").read_text
 app = FastAPI(title="orbitus ui")
 app.mount("/css", StaticFiles(directory=FRONT_DIRECTORY/"css"), name="css")
 app.mount("/js", StaticFiles(directory=FRONT_DIRECTORY/"js"), name="js")
+app.mount("/images", StaticFiles(directory=FRONT_DIRECTORY/"images"), name="images")
 templates = Jinja2Templates(directory=FRONT_DIRECTORY/"html")
 
 status = "Запущен"
