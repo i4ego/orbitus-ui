@@ -1,10 +1,10 @@
 <div align="center">
 
-# **<img src="https://cdn-icons-png.flaticon.com/128/5968/5968756.png" height=28 /> <a href="https://github.com/FunsyMe/">FunsyMe</a><a href="https://github.com/FunsyMe/orbitus-service">/orbitus-service</a> <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" height=28 />**
+# **<a href="https://github.com/i4ego/">i4ego</a><a href="https://github.com/i4ego/orbitus-ui">/orbitus-ui</a>**
 </div>
 
 > [!TIP]
-> Данная утилита является фороком к [flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/).
+> Данная утилита является фороком к [FunsyMe/orbitus-service](https://github.com/FunsyMe/orbitus-service/).
 > Вы можете поддержать оригинального разработчика zapret: https://nowpayments.io/donation/flowseal
 
 > [!CAUTION]
@@ -20,7 +20,7 @@
 > Проверяйте, что запускаете, используя сборки из интернета!
 
 > [!IMPORTANT]
-> Ответственность за базовую компьютерную грамотность полностью лежит на вас. Вы должны уметь работать с консолью Windows и обладать минимальными навыками работы с командными файлами `.bat`, `.cmd`.
+> Ответственность за базовую компьютерную грамотность полностью лежит на вас. Вы должны уметь работать с консолью Windows и обладать минимальными навыками работы с командными файлами `.bat`, `.cmd`, `.exe`.
 > Если у вас возникают многочисленные вопросы уровня _"как это сделать?"_ на базовых этапах, данная утилита вам не подходит. Разработчик не отвечает на вопросы, относящиеся к основам компьютерной грамотности.
 > Если вы всё же решили продолжить, задавайте вопросы в обсуждениях на GitHub или на профильных форумах. Создание issue на GitHub по проблемам, связанным с базовым использованием компьютера, может привести к блокировке
 
@@ -30,7 +30,7 @@
     - В Firefox - "Включить DNS через HTTPS, используя: Максимальную защиту", затем "Выбрать поставщика" и вписать URL поставщика
     - В Windows 11 поддерживается включение Secure DNS прямо в настройках ОС
     
-2. Скачайте архив со [страницы последнего релиза](https://github.com/FunsyMe/orbitus-service/releases/latest)
+2. Скачайте архив со [страницы последнего релиза](https://github.com/i4ego/orbitus-ui/releases/latest)
 3. Распакуйте содержимое архива по пути, который не содержит кириллицу или другие спец. символы
 4. Запустите нужную конфигурацию zapret из папки `pre-configs`
 
