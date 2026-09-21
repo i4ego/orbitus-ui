@@ -68,6 +68,7 @@ button {
 }
 
 .side-panel .buttons button {
+    display: flex;
     width: 100%;
     height: max-content;
     padding: 12px;
@@ -82,6 +83,13 @@ button {
     color: #cccccc;
     text-align: left;
     transition: all 0.3s;
+    align-items: center;
+    gap: 3px;
+}
+
+.side-panel .buttons button img {
+    height: 12px;
+    width: 12px;
 }
 
 .side-panel .buttons button:hover {
@@ -145,7 +153,6 @@ button {
 
 .dashboard .card:hover {
     flex: 2;
-    font-stretch: 150%;
     .card-content small {
         font-size: calc(small - 8px);
     }
@@ -154,7 +161,7 @@ button {
 .dashboard:hover {
     gap: 6px;
     .card {
-        .card-content {
+        .card-content small {
             font-stretch: 117%;
         }
     }
@@ -189,4 +196,5 @@ button {
 
 .dashboard .card .card-content small {
     font-size: calc(small + 4px);
+    transition: all 0.4s;
 }

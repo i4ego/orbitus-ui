@@ -6,3 +6,7 @@ function openPage(page = 1) {
     $(`#p${page}`).addClass("active")
     currentPage = page
 }
+
+function closeUI() {
+    window.location.href = "/api/close"
+}

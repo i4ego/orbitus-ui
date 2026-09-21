@@ -48,6 +48,12 @@ async def index(request: requests.Request):
         },
     )
 
+@app.get("/api/close", response_class=responses.HTMLResponse)
+async def index(request: requests.Request):
+    webview.set_title("closing..")
+    webview.destroy_window()
+    return responses.PlainTextResponse("closed")
+
 def host_worker():
     uvicorn.run(app, host=DEFAULTS["host"], port=DEFAULTS["port"])
 
@@ -57,7 +63,6 @@ def main() -> int:
 
     webview.create_window(app.title, url=f"http://{DEFAULTS['host']}:{DEFAULTS['port']}/", width=1200, height=800, min_size=(1200, 800))
     webview.start()
-    hw.kill()
     return 0
 
 if __name__ == "__main__":
