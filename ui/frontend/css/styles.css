@@ -90,19 +90,32 @@ button {
 .side-panel .buttons button img {
     height: 12px;
     width: 12px;
+    transition: all 0.3s;
 }
 
 .side-panel .buttons button:hover {
     background-color: #333; 
     font-stretch: 120%;
     font-weight: 700;
+    gap: 4px;
+    img {
+        transform: scale(1.25);
+    }
 }
 
 .side-panel .buttons button:active {
     background-color: #444; 
+    font-weight: 500;
+    font-stretch: 110%;
+    img {
+        transform: scale(1.1);
+    }
 }
 .side-panel .buttons .active {
     background-color: #333; 
+    img {
+        transform: scale(1);
+    }
 }
 
 .side-panel .buttons .exit {
@@ -115,7 +128,7 @@ button {
     background-color: transparent;
     transform: translateY(0);
     transition: all 1s;
-    transition-timing-function: cubic-bezier(4, 0.5, 0.5, 0.5, 1, 1, 1, 1);
+    transition-timing-function: cubic-bezier(4, 0.5, 0.5, 0.5, 1, 1, 1, -5, -5);
 }
 
 .page {
@@ -197,4 +210,13 @@ button {
 .dashboard .card .card-content small {
     font-size: calc(small + 4px);
     transition: all 0.4s;
+}
+
+.reload {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    opacity: 0.75;
+    background-color: #333;
+    border-radius: 120px;
 }
