@@ -52,7 +52,7 @@ async def index(request: requests.Request):
 async def index(request: requests.Request):
     webview.set_title("closing..")
     webview.destroy_window()
-    return responses.PlainTextResponse("closed")
+    return responses.RedirectResponse("/")
 
 def host_worker():
     uvicorn.run(app, host=DEFAULTS["host"], port=DEFAULTS["port"])

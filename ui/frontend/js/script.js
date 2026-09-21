@@ -10,3 +10,9 @@ function openPage(page = 1) {
 function closeUI() {
     window.location.href = "/api/close"
 }
+
+function loaded() {
+
+}
+
+window.addEventListener("DOMContentLoaded", loaded)

@@ -21,7 +21,7 @@
     </div>
     <div class="pages">
         <div class="page">
-            <div class="dashboard">
+            <div class="dashboard hover-effects small">
                 <div class="card">
                     <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
                     <a class="card-content" id="status">{{ status }}</a>
@@ -43,10 +43,40 @@
                     <a class="card-content">{{ version }}</a>
                 </div>
             </div>
+            <div class="dashboard huge">
+                <div class="card huge">
+                    <a class="card-title"><img src="{{ url_for('images', path='/rules.svg') }}"> Правила</a>
+                    <div class="card-size-box">
+                        <div class="sb-size-box">
+                            <pre>example example<br>youtubeembeddedplayer.googleapis.com<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br></pre>
+                            <div class="side-bar">
+                                <button>/ ipset-all</button>
+                                <button>/ ipset-exclude-user</button>
+                                <button>/ ipset-exclude</button>
+                                <button>/ list-exclude-user</button>
+                                <button>/ list-exclude</button>
+                                <button>/ list-general-user</button>
+                                <button>/ list-general</button>
+                                <button>/ list-google</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card normal">
+                    <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
+                    <a class="card-content" id="status">{{ status }}</a>
+                </div>
+            </div>
+            <div class="dashboard small">
+                <div class="card huge">
+                    <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
+                    <a class="card-content" id="status">{{ status }}</a>
+                </div>
+            </div>
         </div>
         <div class="page">page2</div>
         <div class="page">page3</div>
     </div>
-    <img class="reload" src="{{ url_for('images', path='/reload.svg') }}" onclick="window.location.href = '/'">
+    <img class="reload" src="{{ url_for('images', path='/reload.svg') }}" onclick="window.location.reload()">
 </body>
 </html>
