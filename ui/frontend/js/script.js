@@ -40,6 +40,16 @@ function updateHardware() {
         $("#net").text(data.net)
     })
 }
+
+function updateLogs() {
+    fetch("/api/logs")
+    .then(response => response.json())
+    .then(data => {
+        $("#logs").text(data.logs)
+    })
+}
+
 setInterval(() => {
     updateHardware()
+    updateLogs()
 }, 2500);

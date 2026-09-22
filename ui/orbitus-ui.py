@@ -37,6 +37,9 @@ gf = "Отключен"
 ipsetf = "Отключен"
 config = "general (FAKE TLS AUTO ALT3)"
 
+logs = "..."
+def log(message): logs=message
+
 @app.get("/", response_class=responses.HTMLResponse)
 async def index(request: requests.Request):
     return templates.TemplateResponse(
@@ -59,8 +62,13 @@ async def index(request: requests.Request):
     hw["orbitus-version"] = ORBITUS_VERSION
     return responses.JSONResponse(hw)
 
+@app.get("/api/logs", response_class=responses.HTMLResponse)
+async def index(request: requests.Request):
+    return responses.JSONResponse({"logs":logs})
+
 @app.get("/api/close", response_class=responses.HTMLResponse)
 async def index(request: requests.Request):
+    log("Закрытие...")
     webview.set_title("closing..")
     webview.destroy_window()
     return responses.RedirectResponse("/")

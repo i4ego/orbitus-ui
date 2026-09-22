@@ -230,6 +230,11 @@ button {
     white-space: nowrap;
 }
 
+.dashboard .card code.card-content {
+    font-family: monospace;
+    font-stretch: 100%;
+}
+
 .dashboard .card .card-content small {
     font-size: calc(small + 4px);
     transition: all 0.4s;
@@ -293,23 +298,52 @@ button {
     background-color: transparent; 
     color: #cccccc;
     text-align: left;
-    transition: all 0.3s;
+    transition: all 0.4s;
     align-items: center;
     gap: 3px;
 }
 
+.dashboard .card .card-size-box .side-bar button:hover {
+    color: #eeeeee;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: 150%;
+}
+
 .dashboard .card .card-size-box .card-sb-line {
     display: flex;
+    align-items: center;
     flex-direction: row;
+    transition: all 0.2s;
+    transition-timing-function: cubic-bezier(4, 0.5, 0.5, 0.5, 1, 1, 1, -5, -5);
+}
+
+.dashboard .card .card-size-box .card-sb-line:hover {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    .line-title {
+        font-weight: 400;
+        font-stretch: 110%;
+        font-size: smaller;
+    }
+    .line-value {
+        font-weight: 600;
+        font-stretch: 125%;
+        font-size: medium;
+    }
 }
 
 .dashboard .card .card-size-box .card-sb-line .line-title {
     font-weight: 600;
     font-stretch: 115%;
+    transition: all 0.2s;
+    transition-timing-function: cubic-bezier(4, 0.5, 0.5, 0.5, 1, 1, 1, -5, -5);
 }
 
 .dashboard .card .card-size-box .card-sb-line .line-value {
     margin-left: auto;
     font-stretch: 150%;
     font-size: 12px;
+    transition: all 0.2s;
+    transition-timing-function: cubic-bezier(4, 0.5, 0.5, 0.5, 1, 1, 1, -5, -5);
 }
