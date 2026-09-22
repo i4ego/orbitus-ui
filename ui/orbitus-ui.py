@@ -26,6 +26,8 @@ app = FastAPI(title="orbitus ui")
 app.mount("/css", StaticFiles(directory=FRONT_DIRECTORY/"css"), name="css")
 app.mount("/js", StaticFiles(directory=FRONT_DIRECTORY/"js"), name="js")
 app.mount("/images", StaticFiles(directory=FRONT_DIRECTORY/"images"), name="images")
+
+app.mount("/api/files/lists", StaticFiles(directory=ORBITUS_DIRECTORY/"lists"), name="lists")
 templates = Jinja2Templates(directory=FRONT_DIRECTORY/"html")
 
 status = "Запущен"

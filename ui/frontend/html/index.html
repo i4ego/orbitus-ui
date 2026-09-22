@@ -24,7 +24,7 @@
             <div class="dashboard hover-effects small">
                 <div class="card">
                     <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
-                    <a class="card-content" id="status">{{ status }}</a>
+                    <a class="card-content" >{{ status }}</a>
                 </div>
                 <div class="card">
                     <a class="card-title"><img src="{{ url_for('images', path='/game.svg') }}"> GameFilter</a>
@@ -48,29 +48,26 @@
                     <a class="card-title"><img src="{{ url_for('images', path='/rules.svg') }}"> Правила</a>
                     <div class="card-size-box">
                         <div class="sb-size-box">
-                            <pre>example example<br>youtubeembeddedplayer.googleapis.com<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br></pre>
+                            <pre id="fileViewer">example example<br>youtubeembeddedplayer.googleapis.com<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br>example example<br></pre>
                             <div class="side-bar">
-                                <button>/ ipset-all</button>
-                                <button>/ ipset-exclude-user</button>
-                                <button>/ ipset-exclude</button>
-                                <button>/ list-exclude-user</button>
-                                <button>/ list-exclude</button>
-                                <button>/ list-general-user</button>
-                                <button>/ list-general</button>
-                                <button>/ list-google</button>
+                                <button onclick="loadFileIntoViewer('#fileViewer', '/api/files/lists/ipset-all.txt')">/ ipset-all</button>
+                                <button onclick="loadFileIntoViewer('#fileViewer', '/api/files/lists/ipset-exclude.txt')">/ ipset-exclude</button>
+                                <button onclick="loadFileIntoViewer('#fileViewer', '/api/files/lists/list-exclude.txt')">/ list-exclude</button>
+                                <button onclick="loadFileIntoViewer('#fileViewer', '/api/files/lists/list-general.txt')">/ list-general</button>
+                                <button onclick="loadFileIntoViewer('#fileViewer', '/api/files/lists/list-google.txt')">/ list-google</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card normal">
                     <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
-                    <a class="card-content" id="status">{{ status }}</a>
+                    <a class="card-content" >{{ status }}</a>
                 </div>
             </div>
             <div class="dashboard small">
                 <div class="card huge">
                     <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
-                    <a class="card-content" id="status">{{ status }}</a>
+                    <a class="card-content" >{{ status }}</a>
                 </div>
             </div>
         </div>

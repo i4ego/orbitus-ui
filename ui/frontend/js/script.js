@@ -7,12 +7,25 @@ function openPage(page = 1) {
     currentPage = page
 }
 
+function loadFileIntoViewer(viewer, file) {
+    fetch(`${file}`)
+      .then(response => response.text())
+      .then(text => {
+        text = text.trim()
+        if (text == "") {
+            text = "<empty>"
+        }
+        text = ` ${file.split("/")[file.split("/").length-1]}:\n\n` + text
+        $(viewer).text(text);
+      });
+}
+
 function closeUI() {
     window.location.href = "/api/close"
 }
 
 function loaded() {
-
+    loadFileIntoViewer('#fileViewer', '/api/files/lists/ipset-all.txt')
 }
 
 window.addEventListener("DOMContentLoaded", loaded)
