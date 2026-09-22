@@ -29,3 +29,17 @@ function loaded() {
 }
 
 window.addEventListener("DOMContentLoaded", loaded)
+
+function updateHardware() {
+    fetch("/api/hardware")
+    .then(response => response.json())
+    .then(data => {
+        $("#os").text(data.os)
+        $("#cpu").text(data.cpu)
+        $("#ram").text(data.ram)
+        $("#net").text(data.net)
+    })
+}
+setInterval(() => {
+    updateHardware()
+}, 2500);

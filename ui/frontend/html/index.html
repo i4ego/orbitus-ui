@@ -60,8 +60,14 @@
                     </div>
                 </div>
                 <div class="card normal">
-                    <a class="card-title"><img src="{{ url_for('images', path='/success.svg') }}"> Статус</a>
-                    <a class="card-content" >{{ status }}</a>
+                    <a class="card-title"><img src="{{ url_for('images', path='/hw.svg') }}"> Система</a>
+                    <div class="card-size-box">
+                        <div class="card-sb-line"><a class="line-title">ОС</a><a class="line-value" id="os">...</a></div>
+                        <div class="card-sb-line"><a class="line-title">Процессор</a><a class="line-value" id="cpu">...</a></div>
+                        <div class="card-sb-line"><a class="line-title">Память</a><a class="line-value" id="ram">...</a></div>
+                        <div class="card-sb-line"><a class="line-title">Сеть</a><a class="line-value" id="net">...</a></div>
+                        <div class="card-sb-line"><a class="line-title">Версия orbitus-service</a><a class="line-value">{{ orbitusversion }}</a></div>
+                    </div>
                 </div>
             </div>
             <div class="dashboard small">

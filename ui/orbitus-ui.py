@@ -11,6 +11,8 @@ import webview
 import os
 import pathlib
 import threading
+# internal module
+import outils
 
 DEFAULTS = {
     "host" : "localhost",
@@ -49,6 +51,13 @@ async def index(request: requests.Request):
             "config" : config
         },
     )
+
+@app.get("/api/hardware", response_class=responses.HTMLResponse)
+async def index(request: requests.Request):
+    hw = outils.getHardware()
+    hw["version"] = VERSION
+    hw["orbitus-version"] = ORBITUS_VERSION
+    return responses.JSONResponse(hw)
 
 @app.get("/api/close", response_class=responses.HTMLResponse)
 async def index(request: requests.Request):
